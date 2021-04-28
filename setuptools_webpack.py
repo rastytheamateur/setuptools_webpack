@@ -31,4 +31,5 @@ class build_js(Command):
     def run(self):
         if self.distribution.webpack_output_path:
             output_path = os.path.join(self.build_lib, self.distribution.webpack_output_path)
+            os.system("npm install")
             os.system("webpack --output-path '%s'" % output_path)
